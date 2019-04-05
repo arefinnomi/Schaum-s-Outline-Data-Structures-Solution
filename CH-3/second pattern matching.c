@@ -13,17 +13,11 @@ typedef double LF;
 
 #define nwl puts("");
 
-int Find( char *str, char *substr)
-{
-
-
-
-
 
 int main()
 {
 	char str[100] = "University of Chittagong";
 
 	printf("%d\n", Find(str, "Chitta"));
-    return 0;
+	return 0;
 }

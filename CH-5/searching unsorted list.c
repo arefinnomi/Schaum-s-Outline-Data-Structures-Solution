@@ -14,42 +14,42 @@ typedef double LF;
 
 struct list
 {
-    int id;
-    char str[100];
-    struct list *p_next;
+	int id;
+	char str[100];
+	struct list *p_next;
 };
 
 int SIZE = sizeof(struct list);
 
 struct list *store(void)
 {
-    struct list *ptr = NULL;
+	struct list *ptr = NULL;
 
-    puts("do you wanna input? (y/n) ");
+	puts("do you wanna input? (y/n) ");
 
-    char ch[2];
-    gets(ch);
+	char ch[2];
+	gets(ch);
 
-    if( strcmp(ch, "y") ) return ptr;
+	if( strcmp(ch, "y") ) return ptr;
 
-    ptr = malloc(SIZE);
-    printf("enter student id: ");
-    scanf("%d", &ptr->id);
-    getchar();
-    printf("enter student name: ");
-    gets(ptr->str);
+	ptr = malloc(SIZE);
+	printf("enter student id: ");
+	scanf("%d", &ptr->id);
+	getchar();
+	printf("enter student name: ");
+	gets(ptr->str);
 
-    ptr->p_next = store();
+	ptr->p_next = store();
 
-    return ptr;
+	return ptr;
 
 }
 
 void traverse( struct list *p)
 {
-    if( p == NULL ) return;
-    printf("%d %s\n", p->id, p->str);
-    traverse(p->p_next);
+	if( p == NULL ) return;
+	printf("%d %s\n", p->id, p->str);
+	traverse(p->p_next);
 }
 
 struct list *Find( struct list *ptr, int key)
@@ -64,12 +64,12 @@ struct list *Find( struct list *ptr, int key)
 int main()
 {
 	freopen("in.txt", "r", stdin);
-    struct list *p = store();
-    traverse(p);
+	struct list *p = store();
+	traverse(p);
 
-    struct list *item_loc = Find( p, 5);
+	struct list *item_loc = Find( p, 5);
 
 	if( item_loc == NULL) printf("Not Found.\n");
-    else printf("%s\n", item_loc->str);
-    return 0;
+	else printf("%s\n", item_loc->str);
+	return 0;
 }

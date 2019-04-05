@@ -15,8 +15,8 @@ typedef double LF;
 
 struct string
 {
-    char info;
-    struct string *p;
+	char info;
+	struct string *p;
 
 
 };
@@ -24,22 +24,22 @@ struct string
 int SIZE = sizeof(struct string);
 struct string * make_string(char *str)
 {
-    struct string *New = malloc(SIZE);
-    New->info = *str;
-    New->p = NULL;
+	struct string *New = malloc(SIZE);
+	New->info = *str;
+	New->p = NULL;
 
-    str++;
+	str++;
 
-    if( *str )
-    {
-        New->p = (struct string *) make_string(str);
-    }
-    return New;
+	if( *str )
+	{
+		New->p = (struct string *) make_string(str);
+	}
+	return New;
 }
 
 void print_string(struct string *New)
 {
-    printf("%c", New->info);
+	printf("%c", New->info);
 
 	if( New->p == NULL) return;
 
@@ -49,9 +49,9 @@ void print_string(struct string *New)
 
 int main()
 {
-    struct string *New = (struct string *) make_string("affgfsdgdfsgf");
+	struct string *New = (struct string *) make_string("affgfsdgdfsgf");
 
-    print_string(New);
+	print_string(New);
 
-    return 0;
+	return 0;
 }

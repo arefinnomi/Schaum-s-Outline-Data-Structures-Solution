@@ -16,26 +16,26 @@ struct student{
 	char name[80];
 	char id[10];
 	float gpa;
-    struct student *p_next;
+	struct student *p_next;
 };
 
 int SIZE = sizeof(struct student);
 
 void insert( struct student *p)
 {
-    printf("enter student name: ");
-    gets(p->name);
-    printf("enter student id: ");
-    gets(p->id);
-    printf("enter student gpa: ");
-    scanf("%f", &p->gpa);
+	printf("enter student name: ");
+	gets(p->name);
+	printf("enter student id: ");
+	gets(p->id);
+	printf("enter student gpa: ");
+	scanf("%f", &p->gpa);
 
-    printf("want to input more data? (y/n): ");
-    getchar();
-    char promte[2];
-    gets(promte);
+	printf("want to input more data? (y/n): ");
+	getchar();
+	char promte[2];
+	gets(promte);
 
-    if( !strcmp(promte, "y") )
+	if( !strcmp(promte, "y") )
 	{
 		p->p_next = malloc(SIZE);
 
@@ -49,7 +49,7 @@ void insert( struct student *p)
 
 void traverse( struct student *p)
 {
-    static int n = 1;
+	static int n = 1;
 	if( p == NULL ) return;
 	printf("%d. name: %s id: %s gpa: %f\n",n++, p->name, p->id, p->gpa);
 	traverse(p->p_next);
@@ -64,5 +64,5 @@ int main()
 	insert(archive);
 	traverse(archive);
 
-    return 0;
+	return 0;
 }

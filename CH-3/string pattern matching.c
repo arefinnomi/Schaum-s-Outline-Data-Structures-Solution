@@ -15,11 +15,11 @@ typedef double LF;
 
 int Find( char *str, char *key)
 {
-    int i, j;
+	int i, j;
 	int size_str = strlen(str);
 	int size_key = strlen(key);
 
-    for( i = 0; i < size_str; i++)
+	for( i = 0; i < size_str; i++)
 	{
 		if( str[i] == key[0])
 		{
@@ -39,5 +39,5 @@ int Find( char *str, char *key)
 int main()
 {
 
-    return 0;
+	return 0;
 }

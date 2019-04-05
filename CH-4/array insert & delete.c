@@ -15,20 +15,20 @@ typedef double LF;
 
 int Insert(int *ary, int n, int k, int item)
 {
-    int i;
-    for(i = n - 1; i > k-1; i--) ary[i+1] = ary[i];
-    ary[k-1] = item;
-    return n+1;
+	int i;
+	for(i = n - 1; i > k-1; i--) ary[i+1] = ary[i];
+	ary[k-1] = item;
+	return n+1;
 
 
 }
 
 int Delete(int *ary, int n, int k, int item)
 {
-    int i;
+	int i;
 
-    for(i = k - 1; i < n + 1; i++) ary[i] = ary[i+1];
-    return n-1;
+	for(i = k - 1; i < n + 1; i++) ary[i] = ary[i+1];
+	return n-1;
 }
 
 
@@ -50,5 +50,5 @@ int main()
 	for(i = 0; i < SIZE; i++) printf("%d: %d\n",i, ary[i]);
 
 
-    return 0;
+	return 0;
 }

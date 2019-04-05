@@ -27,5 +27,5 @@ void hanoi(int n, char x, char y, char z)
 int main()
 {
 	hanoi(20, 'a', 'b', 'c');
-    return 0;
+	return 0;
 }
